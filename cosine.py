@@ -20,12 +20,3 @@ def text_to_vector(text):
      words = WORD.findall(text)
      return Counter(words)
 
-text1 = 'Names of nobel lauretes 1900-1909'
-text2 = 'Names of nobel lauretes 1909-1919'
-
-vector1 = text_to_vector(text1)
-vector2 = text_to_vector(text2)
-
-cosine = get_cosine(vector1, vector2)
-
-print 'Cosine:', cosine
