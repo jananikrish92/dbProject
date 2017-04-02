@@ -9,6 +9,6 @@ for i in range(len(new)):
 df.columns = new
 
 from sqlalchemy import create_engine
-engine = create_engine('postgresql://postgres:outlander@localhost:5433/nobel_l')
+engine = create_engine('postgresql://postgres:outlander@localhost:5432/nobel_l')
 
 df.to_sql("nobel", engine)

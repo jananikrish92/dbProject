@@ -1,7 +1,7 @@
 import psycopg2 as py
 
 try:
-	conn = py.connect("dbname = 'nobel_l' user = 'postgres' host = 'localhost' port='5433' password = 'db123'")
+	conn = py.connect("dbname = 'nobel_l' user = 'postgres' host = 'localhost' port='5432' password = 'db123'")
 except:
 	print "I cannot connect to db"
 cur = conn.cursor()
@@ -15,9 +15,10 @@ for i in range(len(row1)):
 	row2 = cur.fetchall()
 	lis.append(row2)
 
-
+cur.execute("""truncate table index_table;""")
 sql = 'insert into index_table(value,column_name,table_name)values(%s,%s,%s)'
-		
+
+
 print len(row1)
 print len(lis[0])
 errors = []
