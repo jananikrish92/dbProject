@@ -1,7 +1,7 @@
 import psycopg2 as py
 import cosine
 try:
-	conn = py.connect("dbname = 'nobel_l' user = 'postgres' host = 'localhost' port='5432' password = 'db123'")
+	conn = py.connect("dbname = 'nobel_l' user = 'postgres' host = 'localhost' port='5433' password = 'db123'")
 except:
 	print "I cannot connect to db"
 cur = conn.cursor()
@@ -33,6 +33,9 @@ for i in range(len(tabList)):
 		tempTabList.append(tabList[j][0])
 	plotTabList.append([tabList[i][0],tempTabList])
 print plotTabList ,cosineScoreList
+
+
+
 # cur.execute("""select pg_catalog.obj_description('name_1900'::regclass,'pg_class');""")
 # row1 = cur.fetchall()
 
